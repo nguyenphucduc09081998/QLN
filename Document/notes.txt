@@ -1,0 +1,107 @@
+﻿Website url: https://qualuuniemh2.000webhostapp.com/public
+bị dính public do chưa set vhost trên livesite được, tạm thời như vậy sẽ improve sau.
+
+https://www.000webhost.com/
+
+db:
+username = root
+pass = 123456
+localhost
+
+1. Cách chạy project:
+cài đặt xampp (7.2 up)
+cài đặt composer
+cài đặt vhost cho project
+	lưu ý là khi tạo vhost location sẽ chỉ vào thư mục public
+	vhost: qualuuniemh2.test
+chạy project
+
+setting file .env
+
+
+
+2. 1 số việc cần làm:
+
+
+-install laravel: sử dụng composer, tham khảo thêm page: https://laravel.com/docs/5.7/installation	//done 13/09
+-tạo page đơn giản với laravel	//done 13/09
+-upload lên livesite // https://www.000webhost.com/forum/t/deploy-laravel-project-into-000webhost-site/127323
+
+
+-phân tích yêu cầu
+-thiết kế database
+	nên học cách sử dung migration để dễ quản lý db
+-thiết kế giao diện: 
+
+...
+
+13/9 hungha join, test push
+
+
+13/9
+ new task: tạo footer cho page theo sample qualuuniemh2\Document\footer_sample.png
+ path: \qualuuniemh2\resources\views\footer.php
+
+
+ task 2: tham khảo page https://www.homesciencetools.com tạo header và main content.
+ 
+15/9
+ task 1: (done)
+	sửa lại header và footer, những cái link cần phải được đặt trong thẻ <a></a> 
+	thanh search chưa giống với sample
+	Lấy luôn các icon của sample
+	3:04 PM 9/14/2018
+	sửa margin padding footer
+ task 2:(done)
+	Tham khảo https://pandagift.vn/shops/Qua-sinh-nhat/Moc-khoa-hinh-heo-737/
+	Liệt kê các chức năng mà website có thể có. VD: Liệt kê ra các món hàng, lọc các món hàng theo thể loại, mua hàng,....
+	Từ những chức năng liệt kê ra các đối tượng của website. VD: mặt hàng, thể loại, khách hàng,...
+	Liệt kê ra các màn hình mà người dùng thấy
+	Liệt kê ra các màn hình mà admin thấy để quản lý
+	Thống kê lại thành 1 file document để document. đặt tên sao cho dễ hiểu.
+	
+ task 3:(done)
+	Từ doc task 2
+	Kể ra các thuộc tính (tên + kiểu dữ liệu)mà 1 mặt hàng có thể có. VD: Tên mặt hàng, giá, nơi sản xuất, ...
+	Kể ra các tag mà mặt hàng có thể có. VD: Móc khóa, tranh vẽ,...
+	Kể ra các thuộc tính mà  1 người dùng có thể có. VD: Tên đăng nhập, ....
+	Kể ra các thuộc tính cho từng đối tượng ở task2.
+	thống kê lại thành 1 file document để vào folder document
+ task 4:(done, đã viết doc được lưu ở Document: Migration.doc
+	Update: Từ document 2 file Document/DB_1.JPG,DB_2.JPG  nghiên cứu tìm hiểu về migration để tạo db cho trang web.
+	Gợi ý các bước:
+	Vào mySql tạo 1 database mới có tên là qualuuniemh2_db.
+	Tham khảo video và tài liệu sau để tạo ra file migration: 
+		https://toidicode.com/migrations-trong-laravel-17.html	Đọc cái này để hiểu migration
+		https://www.youtube.com/watch?v=VxIRKDb9X1w	video hướng dẫn tạo file migration
+		https://laravel.com/docs/5.3/migrations	Trang chính, có toàn bộ thông tin, cần chú ý phần để hiểu rõ 2 function up và down, Columns 
+												Creating Colum, các kiểu dữ liệu.
+	Từ file migration: chạy lệnh php artisan migrate để tạo db
+		https://www.youtube.com/watch?v=iCpIsDDIKzQ	video hướng dẫn chạy migrate để tạo db
+	
+17/9 
+
+ task 1 (done): hoàn thành task 4 (15/9) 
+ task 2 (done): tạo seed data cho table user:
+ username: admin
+ password: 123456
+ email: admin@admin.com
+mấy field còn lại tùy 
+ task 3: viết doc giải thích phần migration, seed và routes. Lưu lại file tên là  Giải thích.doc
+ task 4: Tìm hiểu về mô hình MVC là gì, MVC trong laravel như thế nào update vào Giải thích.doc. 
+ task 5: Tạo model, controller, service cho product. Liệt kê đối tượng mà mình cần tạo thêm.
+ task 6 (done): Làm chức năng register + login.
+ task 7: Làm chức năng gửi mail verify khi tạo account trong mail chứa link, khi vào link thì set active = 1, lúc mới tạo thì set = 0.
+19/9
+ Hoàn thành các task của 17/9
+ Làm lay out + chức năng quản lý user dựa trên mockup (\Document\Quanlynguoidung.png)
+20/9
+ task 1: làm layout cho trang loại mặt hàng.
+ task 2: làm layout cho trang 1 mặt hàng.
+ task 3: làm layout cho trang cart.
+ task 4: Check lại tất cả các màn hình mà mình đã làm xem có bug chỗ nào không, sửa lại nội dung ở cái nav sao cho hợp lý.
+ Cái nav cũng đang có bug: dùng margin và width không đúng cách nên khiến cái nav nó bị lồi ra bên trái. Sửa lại chỗ này dùng row với col đừng dùng
+ li với magin như thế.
+ update lại file doc chú thích các màn hình nào đã hoàn thành.
+21/9
+ 
